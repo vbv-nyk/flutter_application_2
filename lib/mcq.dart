@@ -27,7 +27,7 @@ class _MCQState extends State<MCQ> {
               color: Colors.white,
             ),
           ),
-          ...finalQuestions[0].answers.map((answer) => 
+          ...finalQuestions[0].shuffleAnswers().map((answer) => 
           CustomButton(answer))
         ],
       ),
