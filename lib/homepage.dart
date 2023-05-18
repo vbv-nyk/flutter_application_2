@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+class Homepage extends StatefulWidget {
+  const Homepage(this.onTakeQuiz,{super.key});
+  
+  final Function() onTakeQuiz;
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
 
+class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -24,7 +30,9 @@ class Homepage extends StatelessWidget {
                   const TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
               foregroundColor: Colors.purple.shade100,
             ),
-            onPressed: () {},
+            onPressed: () {
+              widget.onTakeQuiz();            
+            },
             icon: const Icon(Icons.arrow_circle_right_rounded) ,
             label: const Text(
               "Take Quiz",
