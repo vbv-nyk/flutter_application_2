@@ -12,18 +12,11 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
     
-  Widget? curScreen;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    curScreen = Homepage(onTakeQuiz);
-    super.initState();
-  }
+  var curScreen = 'Homepage';
 
   void onTakeQuiz(){
     setState(() {
-      curScreen = const MCQ();
+      curScreen = 'MCQ';
     });
   }
   @override
@@ -37,7 +30,7 @@ class _QuizState extends State<Quiz> {
               begin: Alignment.centerRight
             ),
           ),
-          child: curScreen,
+          child: curScreen == 'MCQ'  ?const MCQ(): Homepage(onTakeQuiz)  ,
         ),
       ),
     );

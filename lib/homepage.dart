@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
-  const Homepage(this.onTakeQuiz,{super.key});
-  
+  const Homepage(this.onTakeQuiz, {super.key});
+
   final Function() onTakeQuiz;
   @override
   State<Homepage> createState() => _HomepageState();
@@ -31,9 +31,9 @@ class _HomepageState extends State<Homepage> {
               foregroundColor: Colors.purple.shade100,
             ),
             onPressed: () {
-              widget.onTakeQuiz();            
+              widget.onTakeQuiz();
             },
-            icon: const Icon(Icons.arrow_circle_right_rounded) ,
+            icon: const Icon(Icons.arrow_circle_right_rounded),
             label: const Text(
               "Take Quiz",
             ))
